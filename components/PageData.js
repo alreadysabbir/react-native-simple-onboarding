@@ -18,12 +18,12 @@ const PageContent = ({ children }) => (
 const PageData = ({ isLight, image, title, subtitle, ...rest }) => (
   <Page {...rest}>
     <PageContent>
-      <View style={styles.image}>
-        {image}
-      </View>
       <Text style={{ ...styles.title, ...(isLight ? styles.titleLight : {}) }}>
         {title}
       </Text>
+      <View style={styles.image}>
+        {image}
+      </View>
       <Text style={{ ...styles.subtitle, ...(isLight ? styles.subtitleLight : {}) }}>
         {subtitle}
       </Text>
@@ -36,6 +36,7 @@ const styles = {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
+    marginTop: -100,
     justifyContent: 'center',
   },
   image: {
@@ -47,12 +48,14 @@ const styles = {
     textAlign: 'center',
     fontSize: 26,
     color: '#fff',
-    paddingBottom: 15,
+    marginBottom: 60,
+    fontWeight: '600'
   },
   titleLight: {
     color: '#000',
   },
   subtitle: {
+    width: 300,
     textAlign: 'center',
     fontSize: 16,
     color: 'rgba(255, 255, 255, 0.7)',
